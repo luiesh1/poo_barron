@@ -1,7 +1,7 @@
 package ejercicios;
 
 public class Trabajador {
-<<<<<<< Updated upstream
+
         
 	String nombre;
 	char sexo;
@@ -14,9 +14,7 @@ public class Trabajador {
 		this.sexo = sexo;
 		this.horas = horas;
 	}
-=======
-	
->>>>>>> Stashed changes
+
 
 
 	public String getNombre() {
