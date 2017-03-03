@@ -49,19 +49,44 @@ public class Trabajador {
 	public static int CalcularSueldo(Trabajador [] T)
 	{
 		int sueldo = 0;
+		int diferencia=0;
 		for(int i = 0; i<T.length; i++)
 		{
 			if(T[i].getHoras()<=40)
 			{
-			sueldo=T[i].getHoras()*45;
+			sueldo=T[i].getHoras()*25;
 			}
 			else if (T[i].getHoras()>40)
-			{
-			sueldo=T[i].getHoras()*45;
+			{	
+			diferencia=T[i].getHoras()-40;
+			diferencia=diferencia*30;
+			sueldo=diferencia+1000;
 			}
-			
-			
 		}
-		
+		return sueldo;
+	}
+	public static int Bonos(Trabajador [] T)
+	{
+		int bono=0;
+		for(int i=0; i<T.length; i++)
+		{
+		//if(T[i].getSexo() == 'f' || T[i].getSexo() == 'F')
+			if(T[i].getHoras()>=25)
+			{
+				bono=50;
+				if(T[i].getSexo() == 'f' || T[i].getSexo() == 'F')
+				{
+					if(T[i].getHoras()>=40);
+					{
+						bono=350;
+					}
+				}
+			}
+			else
+			{
+			bono=0;
+			}
+		}
+		return bono;
 	}
 }
