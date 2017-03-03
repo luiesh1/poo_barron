@@ -11,14 +11,22 @@ public class MainProyecto {
 		System.out.println("Cantidad de empleados a procesar");
 		int n=Leer.datoInt();
 		Trabajador[] t= new Trabajador [n];
-		for (int i=0; i<empleados.length;i++)
+		for (int i=0; i<n;i++)
 		{
-			t[i] = new Trabajador(empleados[i], sexo[i], horas[i]);
+			t[i] = new Trabajador(empleados[i], sexo[i], horas[i], 0);
 			
-			System.out.println("sueldo del empleado["+(i+1)+"] " +Trabajador.CalcularSueldo(t));
-			System.out.println("bono del empleado ["+(i+1)+"]"+Trabajador.Bonos(t));
-			System.out.println("");
 		}
+		Trabajador.CalcularSueldo(t, n);
+		int [] bono = new int [n];
+		for(int k=0; k<n; k++)
+		{
+		bono=Trabajador.Bonos(t,n);
+		System.out.println("Nombre " + t[k].getNombre());
+		System.out.println("sueldo del empleado["+(k+1)+"] "+t[k].getSueldo());
+		System.out.println("bono del empleado ["+(k+1)+"] "+bono[k]);
+		System.out.println("");
+		}
+		
 		
 	}
 

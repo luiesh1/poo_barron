@@ -1,4 +1,4 @@
-package Programas;
+package ejercicios;
 import java.io.*;
 public class Leer
 {
