@@ -70,7 +70,6 @@ public class Trabajador {
 		int bono=0;
 		for(int i=0; i<T.length; i++)
 		{
-		//if(T[i].getSexo() == 'f' || T[i].getSexo() == 'F')
 			if(T[i].getHoras()>=25)
 			{
 				bono=50;
