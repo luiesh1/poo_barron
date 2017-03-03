@@ -46,5 +46,22 @@ public class Trabajador {
 		this.horas = horas;
 	}
 	
-	
+	public static int CalcularSueldo(Trabajador [] T)
+	{
+		int sueldo = 0;
+		for(int i = 0; i<T.length; i++)
+		{
+			if(T[i].getHoras()<=40)
+			{
+			sueldo=T[i].getHoras()*45;
+			}
+			else if (T[i].getHoras()>40)
+			{
+			sueldo=T[i].getHoras()*45;
+			}
+			
+			
+		}
+		
+	}
 }
