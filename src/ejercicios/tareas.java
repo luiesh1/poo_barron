@@ -2,6 +2,6 @@ package ejercicios;
 
 public class tareas {
 
-	int numero;
+	int numero=0;
 
 }
