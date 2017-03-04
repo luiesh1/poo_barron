@@ -1,6 +1,5 @@
 package ejercicios;
 
-import com.sun.org.apache.xpath.internal.operations.Equals;
 
 public class Trabajador {
 
@@ -77,6 +76,7 @@ public class Trabajador {
 			}
 			T[i].setSueldo(sueldo);
 		}
+		
 	}
 	public static int [] Bonos(Trabajador [] T, int n)
 	{
@@ -101,8 +101,34 @@ public class Trabajador {
 		}
 		return bon ;
 	}
-	public static [] double Impuesto(Trabajador [] T, int n)
+
+	public static double[] Impuestos(Trabajador [] T, int n  )
 	{
-		
+		int[] bonos = new int[n];
+		bonos=Trabajador.Bonos(T, n);
+		double [] imp=new double [n];
+		for(int i=0; i<n ; i++)
+		{
+			double suelt=(double) (T[i].getSueldo()+bonos[i]);
+			if(suelt<1500)
+			{
+				imp[i]=suelt*0.03;
+			}
+		}
+		return imp;
+	}
+	public static void Sueldototal(Trabajador [] T , int n)
+	{
+	
+	int [] bonos = new int [n];
+	bonos=Trabajador.Bonos(T, n);
+	double [] impuesto = new double [n];
+	impuesto = Trabajador.Impuestos(T, n);
+	double sueldot=0;
+	for(int k=0; k<n; k++)
+	{
+		sueldot= (double) ((T[k].getSueldo()+bonos[k])-(impuesto[k]));
+		T[k].setSueldo(sueldot);
+	}
 	}
 }
