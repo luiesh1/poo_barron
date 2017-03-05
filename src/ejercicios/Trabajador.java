@@ -130,5 +130,5 @@ public class Trabajador {
 		sueldot= (double) ((T[k].getSueldo()+bonos[k])-(impuesto[k]));
 		T[k].setSueldo(sueldot);
 	}
-	}
+}
 }
