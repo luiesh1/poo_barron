@@ -16,25 +16,42 @@ public class MainProyecto {
 			t[i] = new Trabajador(empleados[i], sexo[i], horas[i], sueldo);
 			
 		}
+	
 		int[] bono = new int [n];
 		double [] sueld = new double[n];
 		double [] impuesto = new double [n];
 		double [] sueldot = new double [n];
-		for(int k=0; k<n; k++)
-		{
+	
 		bono=Trabajador.Bonos(t,n);
-		System.out.println("Nombre " + t[k].getNombre());
+		System.out.println("nombre   \tHoras trabajadas\tSexo\tSueldo\t  Bonos\tImpuestos\tSueldo total");
+		
+		
+		for(int j=0; j<n ; j++)
+		{
+		System.out.print(t[j].getNombre());
+		System.out.print("\t\t\t"+t[j].getHoras());
+		System.out.print("\t\t  "+t[j].getSexo());
 		sueld=Trabajador.CalcularSueldo(t, n);
-		System.out.println("sueldo del empleado["+(k+1)+"] "+sueld[k]);
-		System.out.println("bono del empleado ["+(k+1)+"] "+bono[k]);
+		if (sueld[j]<1000)
+		{
+			System.out.print("\t $ "+sueld[j]);
+		}
+		if(sueld[j]>=1000)
+		{
+		System.out.print("\t $"+sueld[j]);
+		}
+		
+		System.out.print("   $"+bono[j]);
 		impuesto=Trabajador.Impuestos(t, n);
-		System.out.println("Impuesto "+impuesto[k] );
+		System.out.print("\t  $"+impuesto[j] );
 		sueldot=Trabajador.Sueldototal(t, n);
-		System.out.println("\nSueldo total " +sueldot[k]);
-		System.out.println("Cantidad de billetes y monedas entregadas ");
-		Trabajador.Cantidadbilletes(t, n);
-		System.out.println("------------------------------------------------------------------------");
+		System.out.print("\t\t$"+sueldot[j]+"\n");
+		}
+		System.out.println("\nTotal de \nla semana");
+		 
 		}	
 	}
 
-}
+
+
+

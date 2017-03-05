@@ -137,11 +137,17 @@ public class Trabajador
 		double [] sueldot = new double [n];
 		sueldot=Trabajador.Sueldototal(t, n);
 		double resto=0;
-		for(int i =0 ; i<n ; i++)
+		
+		for(int i =0 ; i<n;)
 		{
 			int bmil=(int) sueldot[i]/1000;
-			resto=sueldot[i]-(bmil*1000);
-			int b500=(int)resto/500;
+			resto=sueldot[i]-bmil*1000;
+			System.out.println("billetes de 1000 : "+bmil); 
+			System.out.println(sueldot[i]);
+			i++;
+			break;
+			
+			/*int b500=(int)resto/500;
 			resto=resto-(b500*500);
 			int b200=(int)resto/200;
 			resto=resto-(b200*200);
@@ -157,7 +163,8 @@ public class Trabajador
 			resto=resto-(m5*5);
 			int m2=(int)resto/2;
 			resto=resto-(m2*2);
-			int m1=(int)resto/1;
+			int m1=(int)resto/1;*/
 			}	
 		}
-	}
+	
+}
