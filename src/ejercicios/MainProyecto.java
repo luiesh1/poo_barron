@@ -1,5 +1,5 @@
 package ejercicios;
-
+import java.util.*;
 public class MainProyecto {
 
 	public static void main(String[] args) 
@@ -48,9 +48,26 @@ public class MainProyecto {
 		System.out.print("\t\t$"+sueldot[j]+"\n");
 		}
 		System.out.println("\nTotal de \nla semana");
-		 
+		
+		int [] billetes = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+		int [] contador = new int [9];
+		int conta=0;
+		int cantidad=0;
+		for(int i=0; i<n; i++){
+			conta= (int) sueldot[i];
+			for(int j=0; j<9; j++){
+				contador[j]=contador[j]+conta/billetes[j];
+				cantidad=conta/billetes[j];
+				conta=conta-cantidad*billetes[j];
+			}
 		}	
+      System.out.println(Arrays.toString(contador));
+      
 	}
+   }
+    
+
+
 
 
 
