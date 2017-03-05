@@ -60,7 +60,9 @@ public class MainProyecto {
 				cantidad=conta/billetes[j];
 				conta=conta-cantidad*billetes[j];
 			}
-		}	
+		}
+	  System.out.println();
+	  System.out.println("Denominación  \tCantidad\tTotal");
       System.out.println(Arrays.toString(contador));
       
 	}
