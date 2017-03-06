@@ -67,9 +67,9 @@ public class Trabajador {
 		return sueld;		
 	}
 	
-	public static int [] Bonos(Trabajador [] T, int n)
+	public static double [] Bonos(Trabajador [] T, int n)
 	{
-		int [] bon = new int [n];
+		double [] bon = new double [n];
 		int bono=0;
 		for(int i=0; i<n; i++)
 		{
@@ -92,7 +92,7 @@ public class Trabajador {
 
 	public static double[] Impuestos(Trabajador [] T, int n  )
 	{
-		int[] bonos = new int[n];
+		double[] bonos = new double[n];
 		bonos=Trabajador.Bonos(T, n);
 		double [] sueldos = new double[n];
 		sueldos=Trabajador.CalcularSueldo(T, n);
@@ -110,7 +110,7 @@ public class Trabajador {
 	
 	public static double[] Sueldototal(Trabajador [] T , int n)
 	{
-		int [] bonos = new int [n];
+		double [] bonos = new double [n];
 		bonos=Trabajador.Bonos(T, n);
 		double [] impuesto = new double [n];
 		impuesto = Trabajador.Impuestos(T, n);
@@ -124,5 +124,3 @@ public class Trabajador {
 		return sueldot;
 	   }		
    }
-	
-
