@@ -10,7 +10,7 @@ public class MainProyecto {
 	        String[] empleados = {"Alberto", "kala ", "marcos", "bryan", "jose", "laura", "adrian", "medrano"};
 	        char[] sexo = {'M', 'F', 'M', 'M', 'M', 'F', 'M', 'M'};
 	        int[] horas = {35, 50, 40, 45, 30, 50, 25, 30};
-	        System.out.println("Cantidad de empleados a procesar");
+	        System.out.println("Cantidad de empleados a procesar: ");
 	        int n = Leer.datoInt();
 	        double sueldo = 0;
 	        Trabajador[] t = new Trabajador[n];
@@ -45,7 +45,7 @@ public class MainProyecto {
 	        System.out.println("");
 	        bono = Trabajador.Bonos(t, n);
 	//
-	        System.out.printf("%-15s %17s %14s %15s %15s %17s %20s", "NOMBRE", "HORAS TRABAJADAS", "SEXO", "SUELDO", "BONOS", "IMPUESTOS", "SUELDO TOTAL\n");
+	        System.out.printf("%-15s %17s %12s %15s %15s %17s %20s", "NOMBRE", "HORAS TRABAJADAS", "SEXO", "SUELDO", "BONOS", "IMPUESTOS", "SUELDO TOTAL\n");
 
 	        for (int j = 0; j < n; j++) {
 	            System.out.printf("%-15s", t[j].getNombre());
@@ -107,11 +107,52 @@ public class MainProyecto {
 	                conta = conta - cantidad * billetes[j];
 	            }
 	        }
-	        System.out.println(" \n\n");
+	        System.out.println();
+	        System.out.println();
+	        System.out.printf("%60s","Agrícola Del Valle");
+	        System.out.println("");
+	        System.out.printf("%90s","Cantidad de billetes y monedas requeridos para el pago de salarios");
+	        System.out.println("");
+	        System.out.printf("%75s","correspondiente a la semana del  "+dia+"/"+(mes+1)+"/"+año+" al ");
+	        if(mes==2 && dia>29)
+	        {
+	            mes=mes+1;
+	        }
+	        if((mes==1 || mes ==3 || mes == 7 || mes==8 || mes == 10) && dia>31){
+	            dia=1;
+	            mes= mes+1;
+	        }
+	        if((mes==4 || mes==5 || mes==6 || mes==9 || mes==11 || mes== 12)& dia>30){
+	            dia=1;
+	            mes= mes+1;
+	        }
+	        System.out.print((dia+7)+"/"+(mes+1)+"/"+año);
+	        System.out.println("");
+	        System.out.println("");
+	        bono = Trabajador.Bonos(t, n);
+	        System.out.println();
 	        System.out.println("Denominación  \tCantidad\tTotal");
-	        System.out.println(Arrays.toString(contador));
-
-	    }
+	        System.out.printf("%8s", "$500");  
+	        System.out.println();
+	        System.out.printf("%8s", "$200");
+	        System.out.println();
+	        System.out.printf("%8s", "$100");
+	        System.out.println();
+	        System.out.printf("%8s", "$50");
+	        System.out.println();
+	        System.out.printf("%8s", "$20");
+	        System.out.println();
+	        System.out.printf("%8s", "$10");
+	        System.out.println();
+	        System.out.printf("%8s", "$5");
+	        System.out.println();
+	        System.out.printf("%8s", "$2");
+	        System.out.println();
+	        System.out.printf("%8s", "$1");
+	        
+	        	
+	    } 
 
 	}
+
 
