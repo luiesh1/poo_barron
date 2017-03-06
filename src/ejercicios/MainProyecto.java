@@ -95,18 +95,7 @@ public class MainProyecto {
 	        System.out.printf("%10s %.2f","$",impuestot);
 	        System.out.printf("%11s %.2f","$",suelds);
 
-	        int[] billetes = {500, 200, 100, 50, 20, 10, 5, 2, 1};
-	        int[] contador = new int[9];
-	        int conta = 0;
-	        int cantidad = 0;
-	        for (int i = 0; i < n; i++) {
-	            conta = (int) sueldot[i];
-	            for (int j = 0; j < 9; j++) {
-	                contador[j] = contador[j] + conta / billetes[j];
-	                cantidad = conta / billetes[j];
-	                conta = conta - cantidad * billetes[j];
-	            }
-	        }
+	       
 	        System.out.println();
 	        System.out.println();
 	        System.out.printf("%60s","Agrícola Del Valle");
@@ -130,27 +119,29 @@ public class MainProyecto {
 	        System.out.println("");
 	        System.out.println("");
 	        bono = Trabajador.Bonos(t, n);
+	        
 	        System.out.println();
 	        System.out.println("Denominación  \tCantidad\tTotal");
-	        System.out.printf("%8s", "$500");  
-	        System.out.println();
-	        System.out.printf("%8s", "$200");
-	        System.out.println();
-	        System.out.printf("%8s", "$100");
-	        System.out.println();
-	        System.out.printf("%8s", "$50");
-	        System.out.println();
-	        System.out.printf("%8s", "$20");
-	        System.out.println();
-	        System.out.printf("%8s", "$10");
-	        System.out.println();
-	        System.out.printf("%8s", "$5");
-	        System.out.println();
-	        System.out.printf("%8s", "$2");
-	        System.out.println();
-	        System.out.printf("%8s", "$1");
 	        
-	        	
+	        int[] billetes = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+	        int[] contador = new int[9];
+	        int conta = (int) suelds;
+	        int cantidad = 0;
+	        for (int i = 0; i < 9; i++) {
+	            for (int j = 0; j < 9; j++) {
+	                contador[j] = contador[j] + conta / billetes[j];
+	                cantidad = conta / billetes[j];
+	                conta = conta - cantidad * billetes[j];   
+	            }
+	            double total=contador[i]*billetes[i];
+	            System.out.printf("%8s", "$"+billetes[i]); 
+		        System.out.printf("%13s", contador[i]);  
+		        System.out.printf("%12s %.2f","$",total);  
+		        System.out.println();
+	        }
+	        System.out.println();
+	        System.out.printf("%24s","Total:");
+	        System.out.printf("%8s %.2f","$",suelds);
 	    } 
 
 	}
