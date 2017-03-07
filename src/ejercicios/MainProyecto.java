@@ -3,19 +3,34 @@ import java.util.*;
 public class MainProyecto {
 
 	 public static void main(String[] args) {
+		
 	        Calendar fecha = new GregorianCalendar();
 	        int año = fecha.get(Calendar.YEAR);
 	        int mes = fecha.get(Calendar.MONTH);
 	        int dia = fecha.get(Calendar.DAY_OF_MONTH);
-	        String[] empleados = {"Alberto", "kala ", "marcos", "bryan", "jose", "laura", "adrian", "medrano"};
-	        char[] sexo = {'M', 'F', 'M', 'M', 'M', 'F', 'M', 'M'};
-	        int[] horas = {35, 50, 40, 45, 30, 50, 25, 30};
+	        
 	        System.out.println("Cantidad de empleados a procesar: ");
 	        int n = Leer.datoInt();
+	        String nombre = "";
+	        char sexo = ' ';
+	        int horas = 0;
+	        
+	        Trabajador [] t=new Trabajador[n];
+	        for(int z=0; z<n; z++)
+	        {
+	        	System.out.print("INGRESA EL NOMBRE DEL EMPLEADO : ["+(n+1)+"] ");
+	        	nombre=Leer.dato();
+	        	System.out.print("INGRESA EL SEXO DEL EMPLEADO : ["+(n+1)+"] ");
+	        	sexo=Leer.datocar();
+	        	System.out.print("INGRESA LAS HORAS TRABAJADAS : ["+(n+1)+"]");
+	        	horas=Leer.datoInt();
+	        	 t[z] = new Trabajador(nombre, sexo, horas);
+	        }
+	        
 	        double sueldo = 0;
-	        Trabajador[] t = new Trabajador[n];
+	        
 	        for (int i = 0; i < n; i++) {
-	            t[i] = new Trabajador(empleados[i], sexo[i], horas[i], sueldo);
+	           
 
 	        }
 

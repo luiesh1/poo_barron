@@ -5,14 +5,13 @@ public class Trabajador {
 	private String nombre;
 	private char sexo;
 	private int horas;
-	private double sueldo;
 	
-	public Trabajador(String nombre, char sexo, int horas, double sueldo) {
+	
+	public Trabajador(String nombre, char sexo, int horas) {
 	
 		this.nombre = nombre;
 		this.sexo = sexo;
 		this.horas = horas;
-		this.sueldo = sueldo;
 	}
 
 	public String getNombre() {
@@ -39,13 +38,6 @@ public class Trabajador {
 		this.horas = horas;
 	}
 	
-	public void setSueldo(double sueldo) {
-		this.sueldo=sueldo;
-	}
-	
-	public double getSueldo() {
-		return sueldo;
-	}
 	
 	public static double[] CalcularSueldo(Trabajador [] T,int n)
 	{
